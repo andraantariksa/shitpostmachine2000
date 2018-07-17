@@ -27,7 +27,7 @@ class FacebookAPI:
 		c.close()
 		body = str(buffer.getvalue().decode('iso-8859-1'))
 		return json.loads(body)
-	def postImageAsFanspage(self,data):
+	def postImageToOwnedFanspage(self,data):
 		buffer = BytesIO()
 		c = pycurl.Curl()
 		c.setopt(c.URL, 'https://graph.facebook.com/v3.0/' + data['fanspageId'] + '/photos?access_token=' + self.accessToken)
